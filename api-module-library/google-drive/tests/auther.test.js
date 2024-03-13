@@ -47,8 +47,8 @@ describe.skip(`${Definition.moduleName} Module Live Tests`, () => {
     });
 
     afterAll(async () => {
-        await module.Credential.deleteMany();
-        await module.Entity.deleteMany();
+        await module.CredentialModel.deleteMany();
+        await module.EntityModel.deleteMany();
         await disconnectFromDatabase();
     });
 

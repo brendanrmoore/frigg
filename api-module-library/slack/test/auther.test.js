@@ -8,22 +8,51 @@ const { Definition} = require('../definition');
 
 
 const mocks = {
-    getUserDetails: {
+    authTest: {
+        "ok": true,
+        "url": "https://lefthookhq.slack.com/",
+        "team": "Left Hook",
+        "user": "test_app",
+        "team_id": "mock_team_id",
+        "user_id": "mock_user_id",
+        "bot_id": "mock_bot_id",
+        "expires_in": 25341,
+        "is_enterprise_install": false,
+        "warning": "missing_charset",
+        "response_metadata": {
+            "warnings": [
+                "missing_charset"
+            ]
+        }
     },
     authorizeResponse: {
-    },
-    getTokenFromCode: async function (code) {
-        const tokenResponse ={
-            "access_token": "foo",
-            "token_type": "Bearer",
-            "refresh_token": "bar",
-            "expires_in": 3600
+        "base": "/redirect/slack",
+        "data": {
+            "code": "redacted",
+            "state": "null"
         }
-        await this.setTokens(tokenResponse);
-        return tokenResponse
-    }
+    },
+    tokenResponse: {
+        "ok": true,
+        "app_id": "mock_app_id",
+        "authed_user": {
+            "id": "mock_user_id"
+        },
+        "scope": "channels:join,channels:manage,chat:write,chat:write.customize,chat:write.public,commands,channels:read,files:write,links:write,im:write,team:read,triggers:write,users:read.email,users:read,groups:write,app_mentions:read,channels:history,im:history,im:read",
+        "token_type": "bot",
+        "access_token": "readacted",
+        "bot_user_id": "mock_bot_id",
+        "refresh_token": "readacted",
+        "expires_in": 25341,
+        "team": {
+            "id": "mock_team_id",
+            "name": "Mock Team"
+        },
+        "enterprise": null,
+        "is_enterprise_install": false
+    },
 }
-//testAutherDefinition(Definition, mocks)
+testAutherDefinition(Definition, mocks)
 
 
 describe(`${Definition.moduleName} Module Live Tests`, () => {
@@ -37,8 +66,8 @@ describe(`${Definition.moduleName} Module Live Tests`, () => {
     });
 
     afterAll(async () => {
-        await module.Credential.deleteMany();
-        await module.Entity.deleteMany();
+        await module.CredentialModel.deleteMany();
+        await module.EntityModel.deleteMany();
         await disconnectFromDatabase();
     });
 
