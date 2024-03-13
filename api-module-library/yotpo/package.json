@@ -24,6 +24,6 @@
         "sinon": "^15.0.0"
     },
     "dependencies": {
-        "@friggframework/core": "file:packages/core"
+        "@friggframework/core": "workspaces:^"
     }
 }

@@ -21,6 +21,6 @@
         "access": "public"
     },
     "dependencies": {
-        "@friggframework/core": "file:packages/core"
+        "@friggframework/core": "workspaces:^"
     }
 }

@@ -19,6 +19,6 @@
     },
     "dependencies": {
         "jsforce": "^1.11.0",
-        "@friggframework/core": "file:packages/core"
+        "@friggframework/core": "workspaces:^"
     }
 }

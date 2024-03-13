@@ -18,6 +18,6 @@
     },
     "dependencies": {
         "monday-sdk-js": "^0.1.3",
-        "@friggframework/core": "file:packages/core"
+        "@friggframework/core": "workspaces:^"
     }
 }

@@ -21,7 +21,7 @@
         "sinon": "^14.0.0"
     },
     "dependencies": {
-        "@friggframework/core": "file:packages/core"
+        "@friggframework/core": "workspaces:^"
     },
     "publishConfig": {
         "access": "public"
